@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
          <modelVersion>4.0.0</modelVersion>
          <groupId>org.mns237</groupId>
-         <artifactId>spring-boot-web</artifactId>
-    	 <version>0.0.1-SNAPSHOT</version>
+         <artifactId>mns237-rest-api</artifactId>
+    	 <version>1.0.0</version>
     	 <packaging>jar</packaging>
-    	 <name>MNS</name>
-    	 <description>Demo project for MNS</description>
-         <url>htpp://somecompany.com</url>
+    	 <name>MNS237RestApi</name>
+    	 <description>Prototyp project for MNS</description>
+         <url>htpp://mns237.org</url>
 
          <!--https://maven.apache.org/scm/maven-scm-plugin/examples/bootstrapping-with-pom.html-->
          <scm>
@@ -115,6 +115,7 @@
                 <!-- Spring Boot Maven -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+
             </plugin>
 
 <!--https://maven.apache.org/scm/maven-scm-plugin/examples/bootstrapping-with-pom.html-->

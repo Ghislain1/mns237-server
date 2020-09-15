@@ -27,8 +27,8 @@
 1.  OpenJDK 14.0.2 14.0.2  (JavaSE 14)
 
 ## Development process for server
-1. Clone the code
-1. Prepare your machine to use PostgresSQL **** NOT already on cloud
+1. Fork/Clone the code
+1. Prepare your machine to use PostgresSQL **** NOT NEED ANY MORE already on cloud***
 1. Run batch file deploy-local.cmd -- should be successfull
 1. Go to browser and dial http://localhost:8080/api/
 1. Browser should display json information

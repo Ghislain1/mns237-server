@@ -14,7 +14,7 @@
 	<a href="#liecensing">Licensing</a>
 </p>
 
-- For server. Click here to see the [Demo Live](https://localhost:8080/api/)
+- For REST api. Click here to see the [Demo Live](https://mns237-serverapi.herokuapp.com/api/)
 - For client. Click here to seee the [Demo Live](https://idrice24.github.io/MNS/)  
 - Client project [here](https://github.com/idrice24/MNS)
 

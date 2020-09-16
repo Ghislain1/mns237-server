@@ -11,3 +11,5 @@ INSERT INTO greeting ( content)
 VALUES('Bonjour le Monde   !!');
 INSERT INTO greeting ( content)
 VALUES('Hallo die Welt !!');
+INSERT INTO greeting ( content)
+VALUES('Hallo die Welt 2!!');

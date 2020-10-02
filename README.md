@@ -1,9 +1,10 @@
-# MNS
+# mns237-serve
 <p align="center">
-    <a href="https://github.com/idrice24/mns237-server/issues/" title="Open Issues"><img src="https://img.shields.io/github/issues/idrice24/mns237-server?style=flat-square "></a>
-<a href="https://app.circleci.com/pipelines/github/idrice24/mns" title="Circleci"><img src="https://img.shields.io/circleci/build/github/idrice24/mns237-server?color=green&logo=red&style=flat-square?style=flat-square"></a>
-<img src="https://img.shields.io/github/contributors/idrice24/mns237-server">
-	
+
+    <a href="https://github.com/Ghislain1/mns237-server/issues/" title="Open Issues"><img src="https://img.shields.io/github/issues/Ghislain1/mns237-server?style=flat-square "></a>
+<a href="https://app.circleci.com/pipelines/github/Ghislain1/mns237-server" title="Circleci"><img src="https://img.shields.io/circleci/build/github/Ghislain1/mns237-server?color=green&logo=red&style=flat-square?style=flat-square"></a>
+  <a href="https://github.com/idrice24/mns237-serve/" title="License"><img src="https://img.shields.io/github/license/idrice24/mns237-serve?style=flat-square"></a>
+
 </p>
 . 
 <p align="center">
@@ -16,21 +17,22 @@
 	<a href="#liecensing">Licensing</a>
 </p>
 
-- For server. Click here to see the [Demo Live](https://localhost:8080/api/)
-- For client. Click here to seee the [Demo Live](https://idrice24.github.io/MNS/)  
-- Client project [here](https://github.com/idrice24/MNS)
+# table-of-contents
+
+- For REST api. Click here to see the [Demo Live](https://mns237-serverapi.herokuapp.com/api/)
+- For client. Click here to seee the [Demo Live](https://idrice24.github.io/mns/)  
+- Client project [here](https://github.com/idrice24/mns)
 
 # Coding
 ## Precondition
-1.  Angular CLI version 9.1.0 or higher
 1.  Maven
 1.  Postgres
 1.  JetBrains IntelliJ IDEA (Community Edition) 2020.2 oder higher
 1.  OpenJDK 14.0.2 14.0.2  (JavaSE 14)
 
 ## Development process for server
-1. Clone the code
-1. Prepare your machine to use PostgresSQL **** NOT already on cloud
+1. Fork/Clone the code
+1. Prepare your machine to use PostgresSQL **** NOT NEED ANY MORE already on cloud***
 1. Run batch file deploy-local.cmd -- should be successfull
 1. Go to browser and dial http://localhost:8080/api/
 1. Browser should display json information
@@ -79,3 +81,4 @@ where path is the script file path.
 1. Go to Deploy tab and scroll down 
 1.  Sample [real project](https://github.com/Yuth-Set/camarket) using java maven
 
+[back to top](#table-of-contents)

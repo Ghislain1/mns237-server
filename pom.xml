@@ -9,7 +9,7 @@
     	 <packaging>jar</packaging>
     	 <name>MNS237RestApi</name>
     	 <description>Prototyp project for MNS</description>
-         <url>htpp://mns237.org</url>
+         <url>http://mns237.org</url>
 
          <!--https://maven.apache.org/scm/maven-scm-plugin/examples/bootstrapping-with-pom.html-->
          <scm>

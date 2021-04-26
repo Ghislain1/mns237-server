@@ -1,4 +1,4 @@
-/* package org.mns237.entity;
+ package org.mns237.entity;
 
 import javax.persistence.*;
 import javax.persistence.Entity;
@@ -40,8 +40,8 @@ public class Topic {
     @Column(name ="category")
     private String category;
 
-    @Column(name="like")
-    private String like;
+    @Column(name="likeButton")
+    private String likeButton;
 
     @Column(name ="unlike")
     private String unlike;
@@ -49,13 +49,13 @@ public class Topic {
     @Column(name="verified")
     private boolean verified;
 
-    @Column(name="comments")
-    private Comment[] comments;
+    @OneToOne
+    private Comments comments;
+
+
 
     // default constructor
-    public Topic(){
-
-    }
+    public Topic(){ }
 
     public Topic(long id, String title, String content){
         this.id = id;
@@ -129,20 +129,10 @@ public class Topic {
         this.imageUrl = imageUrl;
     }
 
-    public Comment[] getComments() {
-        return comments;
-    }
+    public String getLikeButton() { return likeButton;   }
 
-    public void setComments(Comment[] comments) {
-        this.comments = comments;
-    }
-
-    public String getLike() {
-        return like;
-    }
-
-    public void setLike(String like) {
-        this.like = like;
+    public void setLikeButton(String likeButton) {
+        this.likeButton = likeButton;
     }
 
     public String getUnlike() {
@@ -168,4 +158,12 @@ public class Topic {
     public void setVerified(boolean verified) {
         this.verified = verified;
     }
-} */
+
+    public Comments getComments() {
+            return comments;
+    }
+
+    public void setComments(Comments comments) {
+        this.comments = comments;
+    }
+}

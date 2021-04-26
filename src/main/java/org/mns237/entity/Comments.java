@@ -7,8 +7,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name= "comment")
-public class Comment {
+@Table(name= "comments")
+public class Comments {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -21,11 +21,13 @@ public class Comment {
     private String msg;
     @Column(name="email")
     private String email;
+    @Column(name="topic_id")
+    private long topic_id;
 
-    public Comment() {
+    public Comments() {
     }
 
-    public Comment(long id, String msg){
+    public Comments(long id, String msg){
         this.id = id;
         this.msg = msg;
     }
@@ -69,5 +71,7 @@ public class Comment {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
+
 }
 

@@ -22,6 +22,9 @@ public class GreetingServiceTests {
             "1,  100, 101"
     })
     void add(int first, int second, int expectedResult) {
+        GreetingService greetingService = new GreetingService();
+      int result=  greetingService.add(first, second);
+        assertEquals(expectedResult, result);
 
     }
 

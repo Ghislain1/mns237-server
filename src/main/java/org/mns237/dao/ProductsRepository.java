@@ -1,8 +1,6 @@
 package org.mns237.dao;
 
 import org.mns237.entity.Products;
-import org.mns237.entity.Comments;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

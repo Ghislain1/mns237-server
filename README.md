@@ -3,7 +3,7 @@
 
     <a href="https://github.com/Ghislain1/mns237-server/issues/" title="Open Issues"><img src="https://img.shields.io/github/issues/Ghislain1/mns237-server?style=flat-square "></a>
 <a href="https://app.circleci.com/pipelines/github/Ghislain1/mns237-server" title="Circleci"><img src="https://img.shields.io/circleci/build/github/Ghislain1/mns237-server?color=green&logo=red&style=flat-square?style=flat-square"></a>
-  <a href="https://github.com/idrice24/mns237-serve/LICENSE" title="License"><img src="https://img.shields.io/github/LICENSE/idrice24/mns237-serve?style=flat-square"></a>
+  <a href="https://github.com/Ghislain1/mns237-server/blob/master/LICENSE" title="License"><img src="https://img.shields.io/github/license/idrice24/mns237-serve?style=flat-square"></a>
 
 </p>
 . 

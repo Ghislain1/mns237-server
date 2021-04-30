@@ -3,7 +3,6 @@ package org.mns237.dto;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import org.mns237.dao.SubscribersRepository;
 import org.mns237.entity.Subscribers;

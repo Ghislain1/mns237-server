@@ -1,13 +1,10 @@
 package org.mns237.controller;
 
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.web.bind.annotation.*;
 
 import org.mns237.entity.Subscribers;
@@ -31,7 +28,8 @@ public class SubscribersController{
 // showing the list of users from the DB
 	@GetMapping("/admin/abonnement")
 	public List<Subscribers> getAllSubscribers(){
-	 	return subscribersDatabase.getAllUsers();
+
+		return subscribersDatabase.getAllUsers();
 	 }
 
 

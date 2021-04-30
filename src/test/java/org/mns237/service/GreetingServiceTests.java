@@ -32,7 +32,7 @@ public class GreetingServiceTests {
 
         int result=  greetingService.add(first, second);
         assertThat(result).isEqualTo(expectedResult);
-      
+
 
     }
 

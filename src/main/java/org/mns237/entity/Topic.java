@@ -1,5 +1,6 @@
  package org.mns237.entity;
 
+
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -43,11 +44,13 @@ public class Topic {
     @Column(name="likeButton")
     private String likeButton;
 
+
     @Column(name ="unlike")
     private String unlike;
 
     @Column(name="verified")
     private boolean verified;
+
 
     @OneToOne
     private Comments comments;
@@ -56,6 +59,7 @@ public class Topic {
 
     // default constructor
     public Topic(){ }
+
 
     public Topic(long id, String title, String content){
         this.id = id;
@@ -129,10 +133,12 @@ public class Topic {
         this.imageUrl = imageUrl;
     }
 
+
     public String getLikeButton() { return likeButton;   }
 
     public void setLikeButton(String likeButton) {
         this.likeButton = likeButton;
+
     }
 
     public String getUnlike() {

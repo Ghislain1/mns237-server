@@ -53,21 +53,7 @@
 				<scope>runtime</scope>
 			</dependency>
 
-      <!-- Jackson API for JSON  NOT NEED for DEMO
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>2.8.7</version>
-      </dependency> -->
-
-			<!--TODO@Idrice suitable comments
-				<dependency>
-					<groupId>com.h2database</groupId>
-					<artifactId>h2</artifactId>
-					<scope>runtime</scope>
-				</dependency> -->
-
-			<!--Provides utilities for single tests in project-->
+ 			<!--Provides utilities for single tests in project-->
 			<dependency>
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter</artifactId>
@@ -84,6 +70,13 @@
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-core</artifactId>
 				<version>5.4.6</version>
+			</dependency>
+			<!-- To use fluent assert for Test: this allow .e.g to avoid assert class -->
+			<dependency>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-core</artifactId>
+				<version>3.11.1</version>
+				<scope>test</scope>
 			</dependency>
 
 		</dependencies>
@@ -120,7 +113,6 @@
                 <!-- Spring Boot Maven -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-
             </plugin>
 
 <!--https://maven.apache.org/scm/maven-scm-plugin/examples/bootstrapping-with-pom.html-->

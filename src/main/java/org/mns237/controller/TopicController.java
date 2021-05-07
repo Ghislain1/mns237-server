@@ -3,7 +3,7 @@ package org.mns237.controller;
 
 import org.mns237.dao.TopicRepository;
 import org.mns237.dao.CommentRepository;
-import org.mns237.dto.TopicsDatabase;
+import org.mns237.service.TopicService;
 import org.mns237.entity.Comments;
 import org.mns237.entity.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,25 +17,25 @@ import java.util.List;
 public class TopicController {
     @Autowired
     private final TopicRepository topicRepository;
-    private final TopicsDatabase topicsDatabase;
+    private final TopicService topicService;
     private final CommentRepository commentRepository;
 
 
-    public TopicController(TopicRepository topicRepository, CommentRepository commentRepository, TopicsDatabase topicsDatabase) {
+    public TopicController(TopicRepository topicRepository, CommentRepository commentRepository, TopicService topicService) {
         this.topicRepository = topicRepository;
         this.commentRepository = commentRepository;
-        this.topicsDatabase = topicsDatabase;
+        this.topicService = topicService;
     }
 
     // get all blogs from DB
     @GetMapping("/blogs")
     public List<Topic> getAllBlogs(){
-        return topicsDatabase.getAllTopics();
+        return topicService.getAllTopics();
     }
 
     //Get blogs from the DB according to id
     public Topic getTopicById(@PathVariable("id") long id){
-        return topicsDatabase.getBlogById(id);
+        return topicService.getBlogById(id);
     }
 
     //save blog in DB

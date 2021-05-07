@@ -1,14 +1,12 @@
-package org.mns237.dto;
+package org.mns237.service;
 
 import org.mns237.dao.PhotosRepository;
 import org.mns237.entity.Photos;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class PhotosDatabaseImpl implements PhotosDatabase {
+public class PhotosServiceImpl implements PhotosService {
     @Autowired
     private PhotosRepository photosRepository;
 
@@ -17,5 +15,4 @@ public class PhotosDatabaseImpl implements PhotosDatabase {
 
     @Override
     public Photos getPhotoById(long id){ return photosRepository.findPhotoById(id).orElse(null);}
-
 }

@@ -14,13 +14,9 @@ import java.util.List;
 public class PhotosController {
 
     @Autowired
-    private final PhotosService photosService;
-    private final PhotosRepository photosRepository;
+    private PhotosService photosService;
+    private PhotosRepository photosRepository;
 
-    public PhotosController(PhotosService photosService, PhotosRepository photosRepository) {
-        this.photosService = photosService;
-        this.photosRepository = photosRepository;
-    }
 
 
     @GetMapping("/admin/photos/")

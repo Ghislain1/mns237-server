@@ -5,8 +5,8 @@ import org.mns237.entity.Photos;
 import java.util.List;
 
 public interface PhotosService {
-  public  Photos getPhotoById(long id);
+    Photos getPhotoById(long id);
 
-  public  List<Photos> getAllPhotos();
+    List<Photos> getAllPhotos();
 
 }

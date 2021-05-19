@@ -2,8 +2,8 @@ package org.mns237.controller;
 
 
 import org.mns237.dao.CommentRepository;
-import org.mns237.dto.CommentDatabase;
 import org.mns237.entity.Comments;
+import org.mns237.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
@@ -21,7 +21,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 public class CommentController {
     @Autowired
     CommentRepository commentRepository;
-    CommentDatabase commentDatabase;
+    CommentService commentService;
 
     @GetMapping("/comment/id")
     EntityModel<Comments> one(@PathVariable Long id) {
@@ -47,10 +47,10 @@ public class CommentController {
 
     @GetMapping("/admin/comment/")
     public List<Comments> getAllComments(){
-        return commentDatabase.getAllComments();
+        return commentService.getAllComments();
     }
 
     @GetMapping("/admin/comment/id")
-    public Comments getCommentById(@PathVariable("id") long id){ return commentDatabase.getCommentById(id);}
+    public Comments getCommentById(@PathVariable("id") long id){ return commentService.getCommentById(id);}
 
 }

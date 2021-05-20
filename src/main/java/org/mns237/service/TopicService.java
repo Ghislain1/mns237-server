@@ -8,4 +8,5 @@ public interface TopicService {
     public List<Topic> getAllTopics();
 
     public Topic getBlogById(long id);
+
 }

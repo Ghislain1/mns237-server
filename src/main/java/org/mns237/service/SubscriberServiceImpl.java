@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import javax.persistence.SecondaryTable;
 import java.util.List;
 
-@Service
 public class SubscriberServiceImpl implements SubscriberService {
     @Autowired
     private SubscribersRepository subscribersRepository;

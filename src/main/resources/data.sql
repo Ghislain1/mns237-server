@@ -1,29 +1,54 @@
-DROP TABLE IF EXISTS greeting;
+DROP TABLE IF EXISTS greeting CASCADE;
+DROP TABLE IF EXISTS comments CASCADE;
+DROP TABLE IF EXISTS post CASCADE;
 
-CREATE TABLE greeting (
-	id serial PRIMARY KEY,
-	content VARCHAR ( 50 ) UNIQUE NOT NULL
+DROP TABLE IF EXISTS topic CASCADE;
+create table topic (
+id int8 not null,
+category varchar(255),
+content varchar(255),
+created_date timestamp,
+image_url varchar(255),
+like_button varchar(255),
+published_date timestamp,
+rating varchar(255),
+summary varchar(255),
+title varchar(255),
+unlike varchar(255),
+updated_date timestamp,
+verified boolean,
+primary key (id)
 );
 
-INSERT INTO greeting ( content)
-VALUES('Hello world !!');
-INSERT INTO greeting ( content)
-VALUES('Bonjour le Monde   !!');
-INSERT INTO greeting ( content)
-VALUES('Hallo die Welt !!');
-INSERT INTO greeting ( content)
-VALUES('Hallo die Welt 2!!');
+INSERT INTO topic VALUES(1,'E-Health','blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/aboutus.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','first topic','-1','2020-03-02',true);
+INSERT INTO topic VALUES(2,'E-Health','this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR5.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','third topic','-1','2020-03-02',true);
+INSERT INTO topic VALUES(3,'E-Health','this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR2.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','second topic','-1','2020-03-02',true);
+INSERT INTO topic VALUES(4,'E-Health','blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR1.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','sixth topic','-1','2020-03-02',true);
+INSERT INTO topic VALUES(5,'E-Health','the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR8.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','eight topic','-1','2020-03-02',true);
+INSERT INTO topic VALUES(6,'E-Health','the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR5.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','nine topic','-1','2020-03-02',true);
+INSERT INTO topic VALUES(7,'E-Health','econd blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR14.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','third topic','-1','2020-03-02',true);
+INSERT INTO topic VALUES(8,'E-Health',' second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR10.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','tenth topic','-1','2020-03-02',true);
 
-DROP TABLE IF EXISTS comments CASCADE;
- create table comments (
- id int8 not null,
- autor varchar(255),
- created_date timestamp,
- email varchar(255),
- msg varchar(255),
- topic_id int8,
- primary key (id)
- );
+
+ CREATE TABLE public.comments
+(
+    id bigint NOT NULL,
+    autor character varying(255) COLLATE pg_catalog."default",
+    created_date timestamp without time zone,
+    email character varying(255) COLLATE pg_catalog."default",
+    msg character varying(255) COLLATE pg_catalog."default",
+    topic_id bigint NOT NULL,
+    CONSTRAINT comments_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.comments
+    OWNER to postgres;
+
+
 
 INSERT INTO Comments(id, autor, email, msg, topic_id) VALUES(1, 'idrice','idrice.tsafouet@yahoo.com','this is the msg test from the api and db1',1);
 INSERT INTO Comments(id, autor, email, msg, topic_id) VALUES(2, 'idrice','idrice.tsafouet@yahoo.com','this is the msg test from the api and db2',2);
@@ -74,7 +99,7 @@ rating float4,
 summary varchar(255),
 title varchar(255),
 updated_date timestamp,
-prod int, 
+prod int,
 primary key (id)
 );
 
@@ -143,8 +168,8 @@ INSERT INTO subscribers VALUES(3,'chanelle.chiozem@gmail.com','Chanelle','Chioze
 INSERT INTO subscribers VALUES(4,'ghislain@yahoo.com','Ghislain','Zeleu',false);
 
 
-DROP TABLE IF EXISTS videos;
-create table videos (
+DROP TABLE IF EXISTS items CASCADE;
+create table items (
 id int8 not null,
 like_button float4,
 name varchar(255),
@@ -152,37 +177,22 @@ published_date timestamp,
 subtitle varchar(255),
 unlike_button float4,
 year float4,
-videos_id int,
-primary key (id)
-);
-
-DROP TABLE IF EXISTS topic CASCADE;
-create table topic (
-id int8 not null,
-category varchar(255),
-content varchar(255),
-created_date timestamp,
-image_url varchar(255),
-like_button varchar(255),
-published_date timestamp,
-rating varchar(255),
-summary varchar(255),
+link varchar(255),
 title varchar(255),
-unlike varchar(255),
-updated_date timestamp,
-verified boolean,
-comments_id int8,
 primary key (id)
 );
 
-INSERT INTO topic VALUES(1,'E-Health','blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/aboutus.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','first topic','-1','2020-03-02',true,2);
-INSERT INTO topic VALUES(2,'E-Health','this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR5.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','third topic','-1','2020-03-02',true,1);
-INSERT INTO topic VALUES(3,'E-Health','this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR2.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','second topic','-1','2020-03-02',true,1);
-INSERT INTO topic VALUES(4,'E-Health','blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR1.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','sixth topic','-1','2020-03-02',true,1);
-INSERT INTO topic VALUES(5,'E-Health','the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR8.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','eight topic','-1','2020-03-02',true,2);
-INSERT INTO topic VALUES(6,'E-Health','the second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR5.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','nine topic','-1','2020-03-02',true,3);
-INSERT INTO topic VALUES(7,'E-Health','econd blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR14.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','third topic','-1','2020-03-02',true,3);
-INSERT INTO topic VALUES(8,'E-Health',' second blog...hi... this is the second blog...hi... this is the second blog...hi... this is the second blog...','2020-01-12','assets/img/CMR10.jpg',0,'2020-01-12',3,'this is the second blog...hi... this is the second blog.is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the first blog.hi this is the','tenth topic','-1','2020-03-02',true,1);
+INSERT INTO items VALUES(1, 9,'Lartiste','1999/10/13','Lartiste featuring  ',0, 1999,'S6baf8BqKDI', 'Lartiste featuring  ');
+INSERT INTO items VALUES(2, 9,'Lartiste','1999/10/13','Lartiste featuring  ',0, 2000,'S6baf8BqKDI', 'Lartiste featuring  ');
+INSERT INTO items VALUES(3, 9,'Lartiste','1999/10/13','Lartiste featuring  ',0, 2000,'S6baf8BqKDI', 'Lartiste featuring  ');
+INSERT INTO items VALUES(4, 9,'Lartiste','1999/10/13','Lartiste featuring  ',0, 1999,'S6baf8BqKDI', 'Lartiste featuring  ');
+INSERT INTO items VALUES(5, 9,'Lartiste','1999/10/13','Lartiste featuring  ',0, 1999,'S6baf8BqKDI', 'Lartiste featuring  ');
+INSERT INTO items VALUES(6, 9,'Lartiste','1999/10/13','Lartiste featuring  ',0, 2000,'S6baf8BqKDI', 'Lartiste featuring  ');
+INSERT INTO items VALUES(7, 9,'Lartiste','1999/10/13','Lartiste featuring  ',0, 1999,'S6baf8BqKDI', 'Lartiste featuring  ');
+INSERT INTO items VALUES(8, 9,'Lartiste','1999/10/13','Lartiste featuring  ',0, 2000,'S6baf8BqKDI', 'Lartiste featuring  ');
+INSERT INTO items VALUES(9, 9,'Lartiste','1999/10/13','Lartiste featuring  ',0, 1999,'S6baf8BqKDI', 'Lartiste featuring  ');
+INSERT INTO items VALUES(10, 9,'Lartiste','1999/10/13','Lartiste featuring  ',0, 2000,'S6baf8BqKDI', 'Lartiste featuring  ');
+
 
 
 DROP TABLE IF EXISTS shoppings;
@@ -192,3 +202,9 @@ description varchar(255),
 name varchar(255),
 primary key (id)
 );
+DROP VIEW IF EXISTS videos CASCADE;
+create view videos AS select
+items.id as id,
+items.year as year,
+items as items
+from items;

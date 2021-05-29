@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import org.mns237.entity.Subscribers;
 import org.mns237.dao.SubscribersRepository;
-import org.mns237.dto.SubscribersDatabase;
+import org.mns237.service.SubscriberService;
 
 
 @RestController
@@ -19,24 +19,24 @@ public class SubscribersController{
 
 	@Autowired
 	private final SubscribersRepository subscribersRepository;
-	private final SubscribersDatabase subscribersDatabase;
+	private final SubscriberService subscriberService;
 
-	public SubscribersController(SubscribersRepository subscribersRepository, SubscribersDatabase subscribersDatabase) {
+	public SubscribersController(SubscribersRepository subscribersRepository, SubscriberService subscriberService) {
 		this.subscribersRepository = subscribersRepository;
-		this.subscribersDatabase = subscribersDatabase;
+		this.subscriberService = subscriberService;
 	}
 // showing the list of users from the DB
 	@GetMapping("/admin/abonnement")
 	public List<Subscribers> getAllSubscribers(){
 
-		return subscribersDatabase.getAllUsers();
+		return subscriberService.getAllUsers();
 	 }
 
 
 	 // showing the user with id
 	@GetMapping("/admin/abonnement/{id}")
 	public Subscribers getUserById(@PathVariable("id") long id){
-		return subscribersDatabase.getUserById(id);
+		return subscriberService.getUserById(id);
 	}
 
 	// save subscribers

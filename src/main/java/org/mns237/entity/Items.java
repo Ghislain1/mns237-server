@@ -23,8 +23,8 @@ public class Items {
     @Column(name="unlikeButton")
     float unlikeButton;
 
-    @JoinColumn(name="comment_id")
-    private long commentId;
+    @JoinColumn(name="comments_id")
+    private long commentsId;
 
     @Column(name="link")
     private String link;
@@ -96,16 +96,16 @@ public class Items {
         this.year = year;
     }
 
-    public long getCommentId() {
-        return commentId;
+    public long getCommentsId() {
+        return commentsId;
     }
 
     public String getLink() {
         return link;
     }
 
-    public void setCommentId(long commentId) {
-        this.commentId = commentId;
+    public void setCommentsId(long commentsId) {
+        this.commentsId = commentsId;
     }
 
     public void setLink(String link) {

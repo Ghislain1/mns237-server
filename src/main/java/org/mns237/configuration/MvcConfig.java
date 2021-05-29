@@ -1,7 +1,7 @@
 package org.mns237.configuration;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.context.annotation.Bean;
@@ -22,10 +22,10 @@ public class MvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/results").setViewName("results");
     }
 	
-	@Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        return bCryptPasswordEncoder;
-    }
+	//@Bean
+    //public BCryptPasswordEncoder passwordEncoder() {
+     //   BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+     //   return bCryptPasswordEncoder;
+    //}
 	
 }

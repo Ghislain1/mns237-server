@@ -26,7 +26,7 @@ public class PhotosController {
     @GetMapping("/admin/photos/")
     public List<Photos> getAllPhoto(){ return photoService.getAllPhotos();}
 	
-    @GetMapping("/admin/photo/id")
+    @GetMapping(value = "/admin/photo/id")
     public Photos getPhotoById(long id){ return photoService.getPhotoById(id);}
 	
     @PostMapping("/admin/photos/add")

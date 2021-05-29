@@ -1,5 +1,6 @@
 package org.mns237.controller;
 
+import org.mns237.entity.Comments;
 import org.mns237.entity.Items;
 import org.mns237.service.CommentService;
 import org.mns237.dao.VideosRepository;
@@ -18,8 +19,8 @@ import java.util.List;
 public class VideosController {
     @Autowired
     private  CommentService commentService;
-    private  VideosRepository videosRepository;
-    private  VideosService videosService;
+    private final  VideosRepository videosRepository;
+    private final  VideosService videosService;
 
     public VideosController(CommentService commentService, VideosRepository videosRepository, VideosService videosService) {
         this.commentService = commentService;
@@ -27,10 +28,19 @@ public class VideosController {
         this.videosService = videosService;
     }
 
-    // geting all videos from DB;
+    // Getting all videos from DB;
     @GetMapping("/video/list")
         public List<Items> getVideos(){
             return videosService.getAllVideos();
         }
+    //Getting comments from DB according to video ID
+    @GetMapping("/comments/view")
+    public List<Comments> getComments(){
+        return null;
+    }
+
+
+
+
 
 }

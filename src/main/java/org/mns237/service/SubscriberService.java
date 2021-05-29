@@ -7,4 +7,6 @@ import java.util.List;
 public interface SubscriberService {
     public List<Subscribers> getAllUsers();
     public Subscribers getUserById(long id);
+    public void deleteSubscriber(long id);
+    public  void deleteAllSubscribers();
 }

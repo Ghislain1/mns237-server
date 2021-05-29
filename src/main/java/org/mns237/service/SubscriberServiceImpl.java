@@ -5,7 +5,6 @@ import org.mns237.entity.Subscribers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.SecondaryTable;
 import java.util.List;
 
 @Service
@@ -22,5 +21,15 @@ public class SubscriberServiceImpl implements SubscriberService {
     @Override
     public Subscribers getUserById(long id) {
         return subscribersRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void deleteSubscriber(long id){
+         subscribersRepository.deleteById(id);
+    }
+
+    @Override
+    public void deleteAllSubscribers(){
+        subscribersRepository.deleteAll();
     }
 }

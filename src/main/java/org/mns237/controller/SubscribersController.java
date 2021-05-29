@@ -21,6 +21,7 @@ public class SubscribersController{
 	@Autowired
 	private final SubscribersRepository subscribersRepository;
 	private final SubscriberService subscriberService;
+	private Subscribers users;
 
 	public SubscribersController(SubscribersRepository subscribersRepository, SubscriberService subscriberService) {
 		this.subscribersRepository = subscribersRepository;
@@ -44,6 +45,32 @@ public class SubscribersController{
 	@PostMapping("/newsletter")
 	public void addSubscribers(@RequestBody Subscribers subscribers) {
 		subscribersRepository.save(subscribers);
+	}
+
+	// delete subscribers
+	 /**
+	 * Delete product by its id.
+	 *
+	 * @param id
+	 * @return
+	 */
+	 @RequestMapping("/status/delete/{id}")
+	 public String delete(@PathVariable Integer id) {
+	 subscriberService.deleteSubscriber(id);
+	 return "subscriber with id:" +id+" has been deleted!";
+	 }
+
+	 @RequestMapping("/delete/all/subscribers")
+	 	public String deleteAllSubscribers(){
+	 	return "All Subscribers has been deleted";
+	 }
+
+
+	// edit or update subscriber
+	@RequestMapping("/status/edit/{id}")
+	public String edit(@PathVariable Integer id){
+		subscriberService.getUserById(id);
+		return "view of subscriber with id : "+id;
 	}
 
 }

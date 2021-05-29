@@ -4,9 +4,11 @@
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-@Entity
+ @Entity
 @Table(name = "topic")
 public class Topic {
     @Id
@@ -51,9 +53,8 @@ public class Topic {
     @Column(name="verified")
     private boolean verified;
 
-
-    @OneToOne
-    private Comments comments;
+    @OneToMany( cascade = CascadeType.ALL)
+    List<Comments> comments = new ArrayList<>();
 
 
 
@@ -165,11 +166,11 @@ public class Topic {
         this.verified = verified;
     }
 
-    public Comments getComments() {
-            return comments;
-    }
+     public List<Comments> getComments() {
+         return comments;
+     }
 
-    public void setComments(Comments comments) {
-        this.comments = comments;
-    }
-}
+     public void setComments(List<Comments> comments) {
+         this.comments = comments;
+     }
+ }

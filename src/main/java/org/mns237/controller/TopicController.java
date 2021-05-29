@@ -1,12 +1,12 @@
 package org.mns237.controller;
 
 
-import org.mns237.dao.TopicRepository;
 import org.mns237.dao.CommentRepository;
-import org.mns237.entity.Comments;
+import org.mns237.dao.TopicRepository;
 import org.mns237.entity.Topic;
 import org.mns237.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,13 +41,21 @@ public class TopicController {
     //save blog in DB
     @PostMapping("/admin/blogs/add")
     public void addBlog(@RequestBody Topic blog){
-        topicRepository.save(blog);
+        topicService.saveBlog(blog);
     }
+
     // save Comments in DB
-    @PostMapping("/Comments/blog")
-    public void addComment(@RequestBody Comments comments){
-        commentRepository.save(comments);
+    @PutMapping("blogs/{topicId}")
+    public Topic updateBlog(@RequestBody Topic blog){
+        return topicService.saveBlog(blog);
+        }
+
+    @DeleteMapping("/blog/delete/{topicId}")
+    public ResponseEntity<?> deleteBlog(@PathVariable Long topicId, Topic blog){
+        topicService.getBlogById(topicId);
+            return topicService.deleteBlogs(blog);
     }
+
     // delete blog from DB
     // edit blog from DB
 

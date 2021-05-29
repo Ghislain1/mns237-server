@@ -1,5 +1,9 @@
 package org.mns237.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,8 +25,10 @@ public class Comments {
     private String msg;
     @Column(name="email")
     private String email;
-    @Column(name="topic_id")
-    private long topic_id;
+
+    @ManyToOne
+    private Topic topic;
+
 
     public Comments() {
     }
@@ -72,6 +78,11 @@ public class Comments {
         this.msg = msg;
     }
 
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
 
+    public Topic getTopic() {
+        return topic;
+    }
 }
-

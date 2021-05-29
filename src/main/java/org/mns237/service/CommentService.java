@@ -4,8 +4,12 @@ import java.util.List;
 import org.mns237.entity.Comments;
 
 public interface CommentService {
-    public List<Comments> getAllComments();
-    public Comments getCommentById(long id);
+
+    List<Comments> getAllComments();
+    Comments findCommentsById(Long Id);
+
 
     Comments saveComments(Comments comments);
+
+
 }

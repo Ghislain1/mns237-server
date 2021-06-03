@@ -2,8 +2,8 @@ package org.mns237.controller;
 
 
 import org.mns237.dao.CommentRepository;
-import org.mns237.service.CommentService;
 import org.mns237.entity.Comments;
+import org.mns237.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;

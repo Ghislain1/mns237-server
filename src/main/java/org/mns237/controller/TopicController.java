@@ -3,10 +3,10 @@ package org.mns237.controller;
 
 import org.mns237.dao.TopicRepository;
 import org.mns237.dao.CommentRepository;
-import org.mns237.service.CommentService;
-import org.mns237.service.TopicService;
+
 import org.mns237.entity.Comments;
 import org.mns237.entity.Topic;
+import org.mns237.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,15 +21,15 @@ public class TopicController {
     @Autowired
     private final TopicRepository topicRepository;
     private final TopicService topicService;
-    private final CommentService commentService;
     private final CommentRepository commentRepository;
 
 
-    public TopicController(TopicRepository topicRepository, CommentService commentService, TopicService topicService, CommentRepository commentRepository) {
+    public TopicController(TopicRepository topicRepository, CommentRepository commentRepository, TopicService topicService) {
         this.topicRepository = topicRepository;
         this.topicService = topicService;
         this.commentService = commentService;
         this.commentRepository = commentRepository;
+        this.topicService = topicService;
     }
 
     // get all blogs from DB
@@ -77,14 +77,6 @@ public class TopicController {
         return "you have update the topic with id "+ id;
     }
     // delete blog from DB
-    @GetMapping("/admin/topic/delete/{id}")
-    public String deleteTopic(@PathVariable("id") long id, Model model){
-        Topic topics = topicRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("invalid topic id:" + id));
-        topicRepository.delete(topics);
-        model.addAttribute("topic", topicRepository.findAll());
-        System.out.print("you have enter a wrong id: "+ id);
-        return "you have delete the topic with id: "+ id;
-    }
 
+    
 }

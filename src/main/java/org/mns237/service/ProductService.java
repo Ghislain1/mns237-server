@@ -5,8 +5,12 @@ import org.mns237.entity.Products;
 import java.util.List;
 
 public interface ProductService {
-    List<Products> getAllProducts();
+    public List<Products> getAllProducts();
 
-    Products getProductsById(long id);
+    public Products getProductsById(long id);
 
+    void saveProduct(Products products);
+
+    void deleteProducts(long id);
 }
+

@@ -5,9 +5,9 @@ import java.util.Date;
 
 @Entity
 @Table(name="videos")
-public class Videos {
+public class Items {
     @Id
-    @GeneratedValue(strategy =GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
     @Column(name="year")
     float year;
@@ -22,13 +22,18 @@ public class Videos {
     float likeButton;
     @Column(name="unlikeButton")
     float unlikeButton;
-	
-	@JoinColumn(name="comment_id")
-	private long commentId;
 
-    public Videos(){  }
+    @JoinColumn(name="comment_id")
+    private long commentId;
 
-    public Videos(long id, String name){
+    @Column(name="link")
+    private String link;
+    @Column(name="title")
+    private String title;
+
+    public Items(){  }
+
+    public Items(long id, String name){
         this.id = id;
         this.name = name;
     }
@@ -89,5 +94,29 @@ public class Videos {
 
     public void setYear(float year) {
         this.year = year;
+    }
+
+    public long getCommentId() {
+        return commentId;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setCommentId(long commentId) {
+        this.commentId = commentId;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

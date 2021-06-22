@@ -1,4 +1,4 @@
-package org.mns237.service;
+/*package org.mns237.service;
 
  import static org.junit.jupiter.api.Assertions.assertEquals; //we DO NOT need it anymore because we use fluent assertion
 // entry point for all assertThat methods and utility methods (e.g. entry)
@@ -36,4 +36,4 @@ public class GreetingServiceTests {
 
     }
 
-}
+} */

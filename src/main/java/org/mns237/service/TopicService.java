@@ -5,7 +5,8 @@ import org.mns237.entity.Topic;
 import java.util.List;
 
 public interface TopicService {
-    List<Topic> getAllTopics();
+    public List<Topic> getAllTopics();
 
-    Topic getBlogById(long id);
+    public Topic getBlogById(long id);
+
 }

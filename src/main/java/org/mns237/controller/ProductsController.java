@@ -1,8 +1,8 @@
 package org.mns237.controller;
 
 import org.mns237.dao.ProductsRepository;
-import org.mns237.service.ProductService;
 import org.mns237.entity.Products;
+import org.mns237.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,24 +14,19 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class ProductsController {
     @Autowired
-    private final ProductsRepository productsRepository;
     private final ProductService productService;
 
-    public ProductsController(ProductsRepository productsRepository, ProductService productService) {
-        this.productsRepository = productsRepository;
+    public ProductsController(ProductService productService) {
         this.productService = productService;
     }
     // show all products
     @GetMapping("/admin/products")
     public List<Products> getAllProduct(){ return productService.getAllProducts();}
 
-    //show product by id
     @GetMapping("/admin/products/{id}")
     public Products getProductById(long id){return productService.getProductsById(id);}
-
-    // add product in DB
     @PostMapping("/admin/products/add")
-    public void addProduct(@RequestBody Products products){ productsRepository.save(products);}
+    public void addProduct(@RequestBody Products products){ productService.saveProduct(products);}
 
     // edit product from DB
     @GetMapping("admin/products/edit/{id}")

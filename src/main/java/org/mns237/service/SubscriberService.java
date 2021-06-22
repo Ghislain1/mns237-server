@@ -5,7 +5,7 @@ import org.mns237.entity.Subscribers;
 import java.util.List;
 
 public interface SubscriberService {
-    Subscribers getUserById(long id);
 
-    List<Subscribers> getAllUsers();
+    public List<Subscribers> getAllUsers();
+    public Subscribers getUserById(long id);
 }

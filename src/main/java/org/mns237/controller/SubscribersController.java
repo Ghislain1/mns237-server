@@ -46,4 +46,11 @@ public class SubscribersController{
 		subscribersRepository.save(subscribers);
 	}
 
+	// delete subscriber(s)
+	@RequestMapping("/admin/abonnement/{id}")
+	public String delete(@PathVariable Long id){
+		subscriberService.deleteUser(id);
+		return "successfully deleted user id number "+ id;
+	}
+
 }

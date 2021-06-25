@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public class SubscriberServiceImpl implements SubscriberService {
     @Autowired
     private SubscribersRepository subscribersRepository;

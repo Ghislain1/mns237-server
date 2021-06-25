@@ -28,7 +28,6 @@ public class PhotosController {
 	
     @GetMapping(value = "/admin/photo/id")
     public Photos getPhotoById(long id){ return photoService.getPhotoById(id);}
-	
     @PostMapping("/admin/photos/add")
     public void addPhotos(@RequestBody Photos photos){ photosRepository.save(photos);}
 

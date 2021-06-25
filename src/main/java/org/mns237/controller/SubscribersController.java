@@ -20,6 +20,7 @@ public class SubscribersController{
 
 	@Autowired
 	private final SubscribersRepository subscribersRepository;
+	@Autowired
 	private final SubscriberService subscriberService;
 
 	public SubscribersController(SubscribersRepository subscribersRepository, SubscriberService subscriberService) {
@@ -44,6 +45,13 @@ public class SubscribersController{
 	@PostMapping("/newsletter")
 	public void addSubscribers(@RequestBody Subscribers subscribers) {
 		subscribersRepository.save(subscribers);
+	}
+
+	// delete subscriber(s)
+	@RequestMapping("/admin/abonnement/delete/{id}")
+	public String delete(@PathVariable Long id){
+		subscriberService.deleteUser(id);
+		return "successfully deleted user id number "+ id;
 	}
 
 }

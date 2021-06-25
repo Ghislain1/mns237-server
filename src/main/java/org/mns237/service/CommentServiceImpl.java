@@ -34,4 +34,10 @@ public class CommentServiceImpl implements CommentService {
     public Comments findCommentsById(Long Id) {
         return commentRepository.findCommentsById(Id).orElse(null);
     }
+
+
+    @Override
+    public Comments saveComments(Comments comments){
+        return commentRepository.save(comments);
+    }
 }

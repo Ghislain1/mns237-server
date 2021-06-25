@@ -10,4 +10,5 @@ public interface SubscriberService {
     public Subscribers getUserById(long id);
     public void deleteSubscriber(long id);
     public  void deleteAllSubscribers();
+
 }

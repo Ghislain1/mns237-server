@@ -17,4 +17,5 @@ public interface TopicService {
     ResponseEntity<?> deleteBlogs(Topic blog);
 
     Topic saveBlog(Topic blog);
+
 }

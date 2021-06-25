@@ -5,6 +5,7 @@ import org.mns237.entity.Subscribers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.SecondaryTable;
 import java.util.List;
 
 public class SubscriberServiceImpl implements SubscriberService {

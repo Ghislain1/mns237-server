@@ -26,6 +26,7 @@ public class Items {
     @JoinColumn(name="comments_id")
     private long commentsId;
 
+
     @Column(name="link")
     private String link;
     @Column(name="title")
@@ -96,8 +97,10 @@ public class Items {
         this.year = year;
     }
 
+  
     public long getCommentsId() {
         return commentsId;
+
     }
 
     public String getLink() {
@@ -106,6 +109,7 @@ public class Items {
 
     public void setCommentsId(long commentsId) {
         this.commentsId = commentsId;
+
     }
 
     public void setLink(String link) {

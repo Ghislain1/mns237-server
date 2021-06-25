@@ -3,6 +3,8 @@ package org.mns237.controller;
 
 import org.mns237.dao.CommentRepository;
 import org.mns237.dao.TopicRepository;
+
+import org.mns237.entity.Comments;
 import org.mns237.entity.Topic;
 import org.mns237.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,8 +58,6 @@ public class TopicController {
             return topicService.deleteBlogs(blog);
     }
 
-    // delete blog from DB
-    // edit blog from DB
 
-
+    
 }

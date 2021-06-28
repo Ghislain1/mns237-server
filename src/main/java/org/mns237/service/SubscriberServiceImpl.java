@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.SecondaryTable;
 import java.util.List;
 
+@Service
 public class SubscriberServiceImpl implements SubscriberService {
     @Autowired
     private SubscribersRepository subscribersRepository;
@@ -21,5 +22,10 @@ public class SubscriberServiceImpl implements SubscriberService {
     @Override
     public Subscribers getUserById(long id) {
         return subscribersRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void deleteUser(long id) {
+        subscribersRepository.deleteById(id);
     }
 }

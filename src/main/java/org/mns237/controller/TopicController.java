@@ -27,9 +27,7 @@ public class TopicController {
     public TopicController(TopicRepository topicRepository, CommentRepository commentRepository, TopicService topicService) {
         this.topicRepository = topicRepository;
         this.topicService = topicService;
-        this.commentService = commentService;
         this.commentRepository = commentRepository;
-        this.topicService = topicService;
     }
 
     // get all blogs from DB
@@ -58,7 +56,7 @@ public class TopicController {
     @GetMapping("admin/topics/edit/{id}")
     public String showUpdate(@PathVariable("id") long id){
         try {
-            Topic topics = topicService.getTopicsById(id);
+            Topic topics = topicService.getBlogById(id);
         } catch (Exception e) {
             e.printStackTrace();
         }

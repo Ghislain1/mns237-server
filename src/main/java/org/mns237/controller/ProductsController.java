@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.mns237.dao.ProductsRepository;
 
 import java.util.List;
 
@@ -15,9 +16,11 @@ import java.util.List;
 public class ProductsController {
     @Autowired
     private final ProductService productService;
+    private final ProductsRepository productsRepository;
 
-    public ProductsController(ProductService productService) {
+    public ProductsController(ProductService productService, ProductsRepository productsRepository) {
         this.productService = productService;
+        this.productsRepository = productsRepository;
     }
     // show all products
     @GetMapping("/admin/products")

@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://idrice24.github.io/mns/home", maxAge = 3600)
 public class HomeController {
+    
     public HomeController(){
 
     }
+
     @GetMapping("/home/app")
     public String homePage(){
         return "welcome to my wep app";

@@ -14,6 +14,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 public class MvcConfig implements WebMvcConfigurer {
 
     public void addViewControllers(ViewControllerRegistry registry) {
+
         registry.addViewController("/").setViewName("home");
         registry.addViewController("/INDEX").setViewName("INDEX");
         registry.addViewController("/login").setViewName("login");
@@ -30,6 +31,7 @@ public class MvcConfig implements WebMvcConfigurer {
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurerAdapter() {
+            
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**");

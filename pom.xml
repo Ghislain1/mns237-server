@@ -47,9 +47,15 @@
 					<artifactId>spring-boot-starter-hateoas</artifactId>
 				</dependency>
 
-			<dependency>
+			<!--	<dependency>
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
+				<scope>runtime</scope>
+			</dependency> -->
+			<!-- Add H2 Database in Memory-->
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
 				<scope>runtime</scope>
 			</dependency>
 

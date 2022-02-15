@@ -12,7 +12,7 @@ import org.mns237.dao.ProductsRepository;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://idrice24.github.io/mns/")
 public class ProductsController {
     @Autowired
     private final ProductService productService;

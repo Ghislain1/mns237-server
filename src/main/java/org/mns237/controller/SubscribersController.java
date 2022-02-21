@@ -14,7 +14,7 @@ import org.mns237.dao.SubscribersRepository;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200") // this is the link to the frontend
+@CrossOrigin(origins = "https://idrice24.github.io") // this is the link to the frontend
 public class SubscribersController{
 	// standard constructors
 

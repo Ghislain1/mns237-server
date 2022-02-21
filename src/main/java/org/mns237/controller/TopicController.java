@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://idrice24.github.io")
 public class TopicController {
     @Autowired
     private final TopicRepository topicRepository;

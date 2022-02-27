@@ -12,6 +12,7 @@ import org.mns237.dao.ProductsRepository;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 @CrossOrigin(origins = "https://idrice24.github.io")
 public class ProductsController {
     @Autowired
@@ -23,16 +24,16 @@ public class ProductsController {
         this.productsRepository = productsRepository;
     }
     // show all products
-    @GetMapping("/admin/products")
+    @GetMapping("/products")
     public List<Products> getAllProduct(){ return productService.getAllProducts();}
 
-    @GetMapping("/admin/products/{id}")
+    @GetMapping("/products/{id}")
     public Products getProductById(long id){return productService.getProductsById(id);}
-    @PostMapping("/admin/products/add")
+    @PostMapping("/products/add")
     public void addProduct(@RequestBody Products products){ productService.saveProduct(products);}
 
     // edit product from DB
-    @GetMapping("admin/products/edit/{id}")
+    @GetMapping("/products/edit/{id}")
     public String showUpdate(@PathVariable("id") long id){
         try {
             Products products = productService.getProductsById(id);
@@ -43,7 +44,7 @@ public class ProductsController {
     }
 
     // update product from DB
-    @PostMapping("/admin/products/update/{id}")
+    @PostMapping("/products/update/{id}")
     public String updateProduct(@PathVariable("id") long id, Products products, BindingResult result, Model model){
         if (result.hasErrors()){
             products.setId(id);
@@ -55,7 +56,7 @@ public class ProductsController {
     }
 	
     // delete product from DB
-    @GetMapping("/admin/products/delete/{id}")
+    @GetMapping("/products/delete/{id}")
     public String deleteProduct(@PathVariable("id") long id, Model model){
         Products product = productsRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("invalid products id:" + id));

@@ -5,6 +5,13 @@ CREATE TABLE greeting (
 	content VARCHAR ( 50 ) UNIQUE NOT NULL
 );
 
+DROP TABLE IF EXISTS user_role;
+ CREATE TABLE user_role ( user_id int8, role_id int)
+ 
+ INSERT INTO user_role (user_id,role_id) VALUES(1,1);
+ INSERT INTO user_role (user_id,role_id) VALUES(2,1);
+ INSERT INTO user_role (user_id,role_id) VALUES(3,1);
+
 INSERT INTO greeting ( content)
 VALUES('Hello world !!');
 INSERT INTO greeting ( content)

@@ -6,7 +6,7 @@ CREATE TABLE greeting (
 );
 
 DROP TABLE IF EXISTS user_role;
- CREATE TABLE user_role ( user_id int8, role_id int)
+ CREATE TABLE user_role ( user_id int8, role_id int);
  
  INSERT INTO user_role (user_id,role_id) VALUES(1,1);
  INSERT INTO user_role (user_id,role_id) VALUES(2,1);

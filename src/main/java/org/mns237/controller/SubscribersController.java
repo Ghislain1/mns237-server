@@ -28,7 +28,7 @@ public class SubscribersController{
 		this.subscriberService = subscriberService;
 	}
 // showing the list of users from the DB
-	@GetMapping("/admin/abonnement")
+	@GetMapping("/add/abonnement")
 	public List<Subscribers> getAllSubscribers(){
 
 		return subscriberService.getAllUsers();

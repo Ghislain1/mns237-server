@@ -194,7 +194,7 @@ unlike varchar(255),
 updated_date timestamp,
 verified boolean,
 comments_id int8 DEFAULT 0,
-foreign key (comments_id),
+foreign key (comments_id) REFERENCES comments(id),
 primary key (id)
 );
 

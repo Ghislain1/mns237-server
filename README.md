@@ -59,8 +59,10 @@
 ## PostgresSql
 1. Prepare your machine to use PostgresSql ( Oracle VirtualBox or PostgresSql on Window )
 1. [Download PostgresSql] (https://www.postgresql.org/download/) and follow instruction **or**
+
+### How to use PostgresSql from Oracle VirtualBox
 1. Install [Oracle VirtualBox](https://www.virtualbox.org/) if you got old windons version
 1. Start docker Quickstart Terminal
-1. Docker ps --all : list of docker container in docker
-1. docker run --name nameC -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres 
+1. Run command **docker ps --all** to list  docker container in docker
+1. Run command **docker run --name nameC -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres**
 [back to top](#table-of-contents)

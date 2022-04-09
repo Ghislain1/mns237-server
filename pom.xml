@@ -23,7 +23,8 @@
     	<parent>
         	<groupId>org.springframework.boot</groupId>
         	<artifactId>spring-boot-starter-parent</artifactId>
-			<version>2.3.3.RELEASE</version>
+            <version>2.6.3</version>
+            <relativePath/> <!-- lookup parent from repository -->
     	</parent>
 
     	<dependencies>
@@ -47,11 +48,19 @@
 					<artifactId>spring-boot-starter-hateoas</artifactId>
 				</dependency>
 
+			<!-- Provide utilities for Postgregsql -->
 			<dependency>
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
 				<scope>runtime</scope>
 			</dependency>
+
+			<!-- Add H2 Database in Memory
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<scope>runtime</scope>
+			</dependency> -->
 
  			<!--Provides utilities for single tests in project-->
 			<dependency>

@@ -23,7 +23,6 @@ public class TopicController {
     private final TopicService topicService;
     private final CommentRepository commentRepository;
 
-
     public TopicController(TopicRepository topicRepository, CommentRepository commentRepository, TopicService topicService) {
         this.topicRepository = topicRepository;
         this.topicService = topicService;

@@ -47,17 +47,19 @@
 					<artifactId>spring-boot-starter-hateoas</artifactId>
 				</dependency>
 
-			<!--	<dependency>
+			<!-- Provide utilities for Postgregsql -->
+			<dependency>
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
 				<scope>runtime</scope>
-			</dependency> -->
-			<!-- Add H2 Database in Memory-->
+			</dependency>
+
+			<!-- Add H2 Database in Memory
 			<dependency>
 				<groupId>com.h2database</groupId>
 				<artifactId>h2</artifactId>
 				<scope>runtime</scope>
-			</dependency>
+			</dependency> -->
 
  			<!--Provides utilities for single tests in project-->
 			<dependency>

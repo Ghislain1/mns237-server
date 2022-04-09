@@ -43,8 +43,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	}
 
 	@Override
-	protected void configure(HttpSecurity http) throws Exception{
-		http.
+	protected void configure(HttpSecurity httpSecurity) throws Exception{
+		httpSecurity.
 			authorizeRequests()
 			.antMatchers("/api/blogs").permitAll()
 			.antMatchers("/api/video/list").permitAll()

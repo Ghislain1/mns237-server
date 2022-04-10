@@ -64,6 +64,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.antMatchers("/api/abonnement").permitAll()
 			.antMatchers("/api/home").permitAll()
 			.antMatchers("/api/products").permitAll()
+			.antMatchers("/api/comments").permitAll()
 			.antMatchers("/api/register").permitAll()
 			.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
 			.authenticated().and().csrf().disable().cors().configurationSource(request -> corsConfiguration).and().formLogin()

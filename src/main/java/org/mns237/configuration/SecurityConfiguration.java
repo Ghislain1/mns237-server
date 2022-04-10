@@ -9,7 +9,8 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
+import org.springframework.web.cors.CorsConfiguration;
+import java.util.List;
 import javax.sql.DataSource;
 
 @Configuration
@@ -43,20 +44,30 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	}
 
 	@Override
-	protected void configure(HttpSecurity http) throws Exception{
-		http.
+	protected void configure(HttpSecurity httpSecurity) throws Exception{
+
+		// To avoid CORS policy from Front end
+		CorsConfiguration corsConfiguration = new CorsConfiguration();
+		corsConfiguration.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
+		corsConfiguration.addAllowedOriginPattern("*");
+		//corsConfiguration.addAllowedHeader("*");
+		corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PUT", "OPTIONS", "PATCH", "DELETE"));
+		corsConfiguration.setAllowCredentials(true);
+		corsConfiguration.setExposedHeaders(List.of("Authorization"));
+
+		httpSecurity.
 			authorizeRequests()
 			.antMatchers("/api/blogs").permitAll()
 			.antMatchers("/api/video/list").permitAll()
 			.antMatchers("/contact").permitAll()
 			.antMatchers("/media").permitAll()
+			.antMatchers("/api/abonnement").permitAll()
 			.antMatchers("/api/home").permitAll()
-			.antMatchers("/products").permitAll()
-			.antMatchers("/add/abonnement").permitAll()
+			.antMatchers("/api/products").permitAll()
 			.antMatchers("/api/comments").permitAll()
 			.antMatchers("/api/register").permitAll()
 			.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
-			.authenticated().and().csrf().disable().formLogin()
+			.authenticated().and().csrf().disable().cors().configurationSource(request -> corsConfiguration).and().formLogin()
 			.loginPage("/").failureUrl("/login?error=true")
 			.defaultSuccessUrl("/admin/dashboard")
 			.usernameParameter("username")

@@ -33,10 +33,8 @@ public class LoginController{
 		return " welcome to the home page. We hope ou will enjoy ";
 	}
 
-	/*@GetMapping("/admin/login")
-	public String loginApp(){
-		return " ";
-	}*/
+	@GetMapping("/users")
+	public List<Users> getAllUser(){return usersService.getAllUsers();}
 
 	@GetMapping("/register")
 	public String appRegister(){

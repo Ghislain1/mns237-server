@@ -34,7 +34,7 @@ public class LoginController{
 	}
 
 	@GetMapping("/users")
-	public List<Users> getAllUser(){return usersService.getAllUsers();}
+	public List<Users> getAllUser(){return userService.getAllUsers();}
 
 	@GetMapping("/register")
 	public String appRegister(){

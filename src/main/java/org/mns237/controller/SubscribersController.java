@@ -44,8 +44,9 @@ public class SubscribersController{
 
 	// save subscribers
 	@PostMapping("/newsletter")
-	public void addSubscribers(@RequestBody Subscribers subscribers) {
+	public String addSubscribers(@RequestBody Subscribers subscribers) {
 		subscribersRepository.save(subscribers);
+		return "successfully added user";
 	}
 
 	// delete subscriber(s)

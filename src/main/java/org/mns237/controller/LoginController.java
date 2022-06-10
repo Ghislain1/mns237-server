@@ -30,7 +30,7 @@ public class LoginController{
 
 	@GetMapping("/home")
 	public String homePage(){
-		return " welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy ";
+		return " welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  our app is under maint....";
 	}
 
 	@GetMapping("/users")

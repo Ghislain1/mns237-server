@@ -24,16 +24,28 @@ public class UserService{
 		this.userRepository = userRepository;
 	}
 
+	// gettting users by email
 	public Users findUserByEmail(String email){
 		return userRepository.findByEmail(email);
 	}
 
+	//creating a new users
 	public Users saveUser(Users user){
 		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 		user.setActive(1);
 		Role userRole = roleRepository.findByRole("ADMIN");
 		user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
 		return userRepository.save(user);
+	}
+
+	// getting the total number of users fromm db
+	public List<Users> getAllUsers(){
+		return userRepository.findAll();
+	}
+
+	// get the user from user amin
+	public Long getTotalUsers(){
+		return userRepository.count();
 	}
 
 }

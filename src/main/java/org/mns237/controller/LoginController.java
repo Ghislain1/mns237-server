@@ -33,10 +33,15 @@ public class LoginController{
 		return " welcome to the home page. We hope ou will enjoy ";
 	}
 
-	/*@GetMapping("/admin/login")
-	public String loginApp(){
-		return " ";
-	}*/
+	//show all users
+	@GetMapping("/users")
+	public List<Users> getAllUsers(){ return userService.getAllUsers();
+	 }
+
+	//get total nuber of users
+	@GetMapping("/totalUser")
+	public Users getTotalUsers(){ return userService.getTotalUsers();
+	 }
 
 	@GetMapping("/register")
 	public String appRegister(){

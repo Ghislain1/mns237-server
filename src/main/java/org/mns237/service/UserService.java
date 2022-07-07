@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 @Service("userService")
 public class UserService{
@@ -23,6 +24,8 @@ public class UserService{
 		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
 		this.userRepository = userRepository;
 	}
+	public List<Users> getAllUsers(){ 
+		return 	userRepository.findAll();}
 
 	// gettting users by email
 	public Users findUserByEmail(String email){

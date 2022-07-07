@@ -29,7 +29,7 @@ public class SubscribersController{
 		this.subscriberService = subscriberService;
 	}
 // showing the list of users from the DB
-	@GetMapping("/add/abonnement")
+	@GetMapping("/list/abonnement")
 	public List<Subscribers> getAllSubscribers(){
 
 		return subscriberService.getAllUsers();
@@ -44,8 +44,9 @@ public class SubscribersController{
 
 	// save subscribers
 	@PostMapping("/newsletter")
-	public void addSubscribers(@RequestBody Subscribers subscribers) {
+	public String addSubscribers(@RequestBody Subscribers subscribers) {
 		subscribersRepository.save(subscribers);
+		return "successfully added user";
 	}
 
 	// delete subscriber(s)

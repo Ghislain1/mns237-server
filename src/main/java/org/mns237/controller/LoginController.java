@@ -1,6 +1,6 @@
 package org.mns237.controller;
 import javax.validation.Valid;
-
+import java.util.List;
 import org.mns237.entity.Users;
 import org.mns237.service.UserService;
 
@@ -30,7 +30,7 @@ public class LoginController{
 
 	@GetMapping("/home")
 	public String homePage(){
-		return " welcome to the home page. We hope ou will enjoy ";
+		return " welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  our app is under maint....";
 	}
 
 	//show all users
@@ -43,7 +43,7 @@ public class LoginController{
 	public Users getTotalUsers(){ return userService.getTotalUsers();
 	 }
 
-	@GetMapping("/register")
+@GetMapping("/register")
 	public String appRegister(){
 		Users user = new Users();
 

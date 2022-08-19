@@ -41,11 +41,6 @@ public class UserService{
 		return userRepository.save(user);
 	}
 
-	// getting the total number of users fromm db
-	public List<Users> getAllUsers(){
-		return userRepository.findAll();
-	}
-
 	// get the user from user amin
 	public Long getTotalUsers(){
 		return userRepository.count();

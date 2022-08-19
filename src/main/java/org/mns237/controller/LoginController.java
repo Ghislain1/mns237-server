@@ -40,7 +40,7 @@ public class LoginController{
 
 	//get total nuber of users
 	@GetMapping("/totalUser")
-	public Users getTotalUsers(){ return userService.getTotalUsers();
+	public long getTotalUsers(){ return userService.getTotalUsers();
 	 }
 
 @GetMapping("/register")

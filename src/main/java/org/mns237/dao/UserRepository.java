@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository("userRepository")
 public interface UserRepository extends JpaRepository<Users, Long> {
 	Users findByEmail(String email);
+	List<Users> findAll(); //here i list all users  from the database;
 }

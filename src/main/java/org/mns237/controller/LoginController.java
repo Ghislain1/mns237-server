@@ -30,7 +30,7 @@ public class LoginController{
 
 	@GetMapping("/home")
 	public String homePage(){
-		return " welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  our app is under maint....";
+		return " welcome to the home page. We hope you will enjoy  welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  welcome to the home page. We hope ou will enjoy  our app is under maint....";
 	}
 
 	//show all users
@@ -47,7 +47,7 @@ public class LoginController{
 	public String appRegister(){
 		Users user = new Users();
 
-		return "adding a new user ........";
+		return "adding a new user ........+++";
 	}
 
 	@PostMapping("/register")

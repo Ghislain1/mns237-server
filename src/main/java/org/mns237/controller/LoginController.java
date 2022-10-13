@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://idrice24.github.io")
+@CrossOrigin(origins = "https://idrice24.github.io/mns/cms/login", maxAge = 3600)
 public class LoginController{
 	@Autowired
 	private UserService userService;

@@ -57,6 +57,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
 		httpSecurity.
 			authorizeRequests()
+			.antMatchers("/api/").permitAll()
 			.antMatchers("/api/blogs").permitAll()
 			.antMatchers("/api/video/list").permitAll()
 			.antMatchers("/contact").permitAll()
@@ -68,6 +69,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.antMatchers("/api/products").permitAll()
 			.antMatchers("/api/comments").permitAll()
 			.antMatchers("/api/register").permitAll()
+			.antMatchers("/api/login").permitAll()
 			.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
 			.authenticated().and().csrf().disable().cors().configurationSource(request -> corsConfiguration).and().formLogin()
 			.loginPage("/").failureUrl("/login?error=true")

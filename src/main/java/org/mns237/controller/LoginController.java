@@ -67,7 +67,7 @@ public class LoginController{
 		return "waiting for request........";
 	}
 
-	@GetMapping("/admin/login")
+	@GetMapping("/login")
 	public String adminHome(){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Users user = userService.findUserByEmail(auth.getName());

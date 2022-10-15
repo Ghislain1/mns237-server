@@ -69,6 +69,7 @@ public class LoginController{
 
 	@GetMapping("/login")
 	public String adminHome(){
+		System.out.print("user login in dashboard");
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Users user = userService.findUserByEmail(auth.getEmail());
 		System.out.print("Welcome" + user.getUsername() + " " + user.getfName() + " " + "( " + user.getEmail()+ ")" );

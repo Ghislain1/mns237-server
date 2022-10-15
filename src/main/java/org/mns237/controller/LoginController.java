@@ -71,7 +71,7 @@ public class LoginController{
 	public String adminHome(){
 		System.out.print("user login in dashboard");
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		Users user = userService.findUserByEmail(auth.getEmail());
+		Users user = userService.findUserByEmail(auth.getName());
 		System.out.print("Welcome" + user.getUsername() + " " + user.getfName() + " " + "( " + user.getEmail()+ ")" );
 		System.out.println("Content Available Only for Users with Admin Role");
 

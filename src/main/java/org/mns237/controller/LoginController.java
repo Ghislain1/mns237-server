@@ -70,7 +70,7 @@ public class LoginController{
 	@GetMapping("/login")
 	public String adminHome(){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		Users user = userService.findUserByEmail(auth.getName());
+		Users user = userService.findUserByEmail(auth.getEmail());
 		System.out.print("Welcome" + user.getUsername() + " " + user.getfName() + " " + "( " + user.getEmail()+ ")" );
 		System.out.println("Content Available Only for Users with Admin Role");
 

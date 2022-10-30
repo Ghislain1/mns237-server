@@ -121,6 +121,7 @@ INSERT INTO products VALUES(15, 'Mitsubishi','61957-9401','Mauris lacinia sapien
 DROP TABLE IF EXISTS users CASCADE;
 create table users (
 id int8 not null,
+active int8 not null,
 avater varchar(255),
 created_date timestamp,
 description varchar(255),
@@ -136,18 +137,31 @@ client_id int8,
 primary key (id)
 );
 
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(1,'admin','admin','#123456789#','admni@mns237.org',true,'123456789#ZebationStafouetIdrice123456789#','admin');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(2,'idrice','tsafouet','0000','admni@mns237.org',true,'00000#123456789#0000','idrice');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(3,'alex','zabatio','1234','admni@mns237.org',false,'00000#123456789#0000','alex');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(4,'paul','tsafouet','4321','admni@mns237.org',false,'00000#123456789#0000','paul');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(5,'chanelle','zabatio','0000','admni@mns237.org',false,'00000#123456789#0000','chanelle');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(6,'pascal','tsafouet','9876','admni@mns237.org',false,'00000#123456789#0000','pascal');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(7,'lyam','tsafouet','3456','admni@mns237.org',false,'00000#123456789#0000','lyam');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(8,'zoe','tsafouet','6543','admni@mns237.org',false,'00000#123456789#0000','zeo');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(9,'christian','tsafouet','2345','admni@mns237.org',false,'00000#123456789#0000','christian');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(10,'christine','tsafouet','5432','admni@mns237.org',false,'00000#123456789#0000','christine');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(11,'victor','tsafouet','5678','admni@mns237.org',false,'00000#123456789#0000','victor');
-INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username) VALUES(12,'victoria','tsafouet','8765','admni@mns237.org',false,'00000#123456789#0000','victoria');
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(1,'admin','admin','#123456789#','admni@mns237.org',true,'123456789#ZebationStafouetIdrice123456789#','admin',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(2,'idrice','tsafouet','0000','admin@mns237.org',true,'00000#123456789#0000','idrice',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(3,'alex','zabatio','1234','admni@mns237.org',false,'00000#123456789#0000','alex',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(4,'paul','tsafouet','4321','admni@mns237.org',false,'00000#123456789#0000','paul',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(5,'chanelle','zabatio','0000','admni@mns237.org',false,'00000#123456789#0000','chanelle',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(6,'pascal','tsafouet','9876','admni@mns237.org',false,'00000#123456789#0000','pascal',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(7,'lyam','tsafouet','3456','admni@mns237.org',false,'00000#123456789#0000','lyam',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(8,'zoe','tsafouet','6543','admni@mns237.org',false,'00000#123456789#0000','zeo',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(9,'christian','tsafouet','2345','admni@mns237.org',false,'00000#123456789#0000','christian',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(10,'christine','tsafouet','5432','admni@mns237.org',false,'00000#123456789#0000','christine',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(11,'victor','tsafouet','5678','admni@mns237.org',false,'00000#123456789#0000','victor',1);
+INSERT INTO users(id,f_name,l_name,password,email,is_admin,token,username, active) VALUES(12,'victoria','tsafouet','8765','admni@mns237.org',false,'00000#123456789#0000','victoria',1);
+
+
+DROP TABLE IF EXISTS role CASCADE;
+create table role(
+role_id int not null,
+role varchar(255)
+);
+
+INSERT INTO role(role_id, role) VALUES(1, 'ADMIN');
+INSERT INTO role(role_id, role) VALUES(2, 'ADMIN');
+
+
+
 
 DROP TABLE IF EXISTS subscribers CASCADE;
 

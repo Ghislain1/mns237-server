@@ -47,8 +47,14 @@
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-hateoas</artifactId>
 				</dependency>
+			<!-- MySQL connection 
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<scope>runtime</scope>
+			</dependency>-->
 
-			<!-- Provide utilities for Postgregsql -->
+			<!-- Provide utilities for Postgregsql-->
 			<dependency>
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
@@ -60,7 +66,13 @@
 				<groupId>com.h2database</groupId>
 				<artifactId>h2</artifactId>
 				<scope>runtime</scope>
-			</dependency> -->
+			</dependency>-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+				<scope>runtime</scope>
+				<optional>true</optional>
+			</dependency>
 
  			<!--Provides utilities for single tests in project-->
 			<dependency>

@@ -47,7 +47,7 @@ public class LoginController{
 	public String appRegister(){
 		Users user = new Users();
 
-		return "adding a new user ........";
+		return "adding a new user ........"+ user;
 	}
 
 	@PostMapping("/register")

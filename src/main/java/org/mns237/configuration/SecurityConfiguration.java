@@ -72,7 +72,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.antMatchers("/api/login").permitAll()
 			.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
 			.authenticated().and().csrf().disable().cors().configurationSource(request -> corsConfiguration).and().formLogin()
-			.loginPage("/").failureUrl("/login?error=true")
+			.loginPage("/api/login").failureUrl("/login?error=true")
 			.defaultSuccessUrl("/admin/dashboard")
 			.usernameParameter("username")
 			.passwordParameter("password")

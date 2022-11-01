@@ -47,7 +47,7 @@ public class LoginController{
 	public String appRegister(){
 		Users user = new Users();
 
-		return "adding a new user ........";
+		return "adding a new user ........"+ user;
 	}
 
 	@PostMapping("/register")
@@ -67,7 +67,7 @@ public class LoginController{
 		return "waiting for request........";
 	}
 
-	@GetMapping("/admin/login")
+	@GetMapping("/login")
 	public String adminHome(){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Users user = userService.findUserByEmail(auth.getName());

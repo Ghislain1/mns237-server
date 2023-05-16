@@ -7,6 +7,7 @@ import org.mns237.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://idrice24.github.io")
+/*@CrossOrigin(origins = "https://idrice24.github.io")*/
 public class LoginController{
 	@Autowired
 	private UserService userService;
@@ -67,14 +68,19 @@ public class LoginController{
 		return "waiting for request........";
 	}
 
-	@GetMapping("/login")
-	public String adminHome(){
+	@GetMapping("/cms/login")
+	public String adminHome(@Valid Users user, Model model, BindingResult result){
+		System.out.println("praparing to login!!!!!!!!!!!!!!!!!!!");
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		Users user = userService.findUserByEmail(auth.getName());
+		if(result.hasErrors()){
+			System.out.println("can't login System Errors!!!!!!");
+			result.rejectValue("user", "you can't login contact the administrator!!!!");
+		}
+		 user = userService.findUserByEmail(auth.getName());
 		System.out.print("Welcome" + user.getUsername() + " " + user.getfName() + " " + "( " + user.getEmail()+ ")" );
 		System.out.println("Content Available Only for Users with Admin Role");
 
-		return "Welcome admin " + user.getUsername();
+		return "Welcome admin " ;//+ user.getUsername();
 	}
 
 }

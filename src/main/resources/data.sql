@@ -21,7 +21,7 @@ VALUES('Hallo die Welt !!');
 INSERT INTO greeting ( content)
 VALUES('Hallo die Welt 2!!');
 
-DROP TABLE IF EXISTS comments CASCADE;
+/*DROP TABLE IF EXISTS comments CASCADE;
  create table comments (
  id int8 not null,
  autor varchar(255),
@@ -52,7 +52,7 @@ INSERT INTO Comments(id, autor, email, msg, topic_id) VALUES(17, 'idrice','idric
 INSERT INTO Comments(id, autor, email, msg, topic_id) VALUES(18, 'idrice','idrice.tsafouet@yahoo.com','this is the msg test from the api and db8',2);
 INSERT INTO Comments(id, autor, email, msg, topic_id) VALUES(19, 'idrice','idrice.tsafouet@yahoo.com','this is the msg test from the api and db8',2);
 INSERT INTO Comments(id, autor, email, msg, topic_id) VALUES(20, 'idrice','idrice.tsafouet@yahoo.com','this is the msg test from the api and db8',2);
-
+*/
 
 
 

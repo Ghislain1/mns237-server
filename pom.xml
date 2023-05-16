@@ -47,19 +47,19 @@
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-hateoas</artifactId>
 				</dependency>
-			<!-- MySQL connection 
+			<!-- MySQL connection -->
 			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
 				<scope>runtime</scope>
-			</dependency>-->
+			</dependency>
 
-			<!-- Provide utilities for Postgregsql-->
+			<!-- Provide utilities for Postgregsql
 			<dependency>
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
 				<scope>runtime</scope>
-			</dependency>
+			</dependency>-->
 
 			<!-- Add H2 Database in Memory
 			<dependency>

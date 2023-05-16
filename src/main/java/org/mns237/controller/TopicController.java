@@ -53,9 +53,10 @@ public class TopicController {
 
     // edit product from DB
     @GetMapping("admin/topics/edit/{id}")
-    public String showUpdate(@PathVariable("id") long id){
+    public String showUpdate(@PathVariable("id") long id, Model model){
         try {
             Topic topics = topicService.getBlogById(id);
+            model.addAttribute("topic", topics);
         } catch (Exception e) {
             e.printStackTrace();
         }

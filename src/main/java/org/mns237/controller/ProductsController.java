@@ -39,9 +39,10 @@ public class ProductsController {
 
     // edit product from DB
     @GetMapping("/products/edit/{id}")
-    public String showUpdate(@PathVariable("id") long id){
+    public String showUpdate(@PathVariable("id") long id, Model model){
         try {
             Products products = productService.getProductsById(id);
+            model.addAttribute("product", products);
         } catch (Exception e) {
             e.printStackTrace();
         }

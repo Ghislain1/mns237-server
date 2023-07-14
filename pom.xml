@@ -92,6 +92,15 @@
 				<artifactId>spring-security-core</artifactId>
 				<version>5.4.6</version>
 			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-test</artifactId>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-security</artifactId>
+			</dependency>
 
 			<!-- To use fluent assert for Test: this allow .e.g to avoid assert class -->
 			<dependency>

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/blog")
 @CrossOrigin(origins = "https://idrice24.github.io")
 public class TopicController {
     @Autowired

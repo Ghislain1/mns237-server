@@ -17,7 +17,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController
 @CrossOrigin(origins = "https://idrice24.github.io")
-@RequestMapping("/api")
+@RequestMapping("/api/comment")
 public class CommentController {
     @Autowired
     CommentRepository commentRepository;

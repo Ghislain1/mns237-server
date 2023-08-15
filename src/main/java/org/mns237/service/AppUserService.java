@@ -1,6 +1,10 @@
 package org.mns237.service;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
 import org.mns237.dao.AppUserRepository;
+import org.mns237.dto.ConfirmationToken;
 import org.mns237.entity.AppUser;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -16,6 +20,7 @@ public class AppUserService implements UserDetailsService {
     private final String USER_NOT_FOUND = "User with email %s does not exist!!";
     private final AppUserRepository appUserRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final ConfirmationTokenService confirmationTokenService;
     
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -31,9 +36,26 @@ public class AppUserService implements UserDetailsService {
         }
         String encodPassword = bCryptPasswordEncoder.encode(appUser.getPassword());
         appUser.setPassword(encodPassword);
+        boolean passExist = appUserRepository.findByPassword(appUser.getPassword()).isPresent();
+        if(passExist){
+            throw new IllegalStateException(" Password already taken" + appUser.getPassword());
+        }
         appUserRepository.save(appUser);
+        
+        String  token = UUID.randomUUID().toString();
+        ConfirmationToken confirmationToken = new ConfirmationToken(
+            token,
+            LocalDateTime.now(),
+            LocalDateTime.now().plusMinutes(15),
+            appUser  
+        );
+        confirmationTokenService.saveConfirmationToken(confirmationToken);
 
-        return "welcome user "+ appUser.getFirstName() + " " + appUser.getLastName();
+        return token;
+    }
+
+    public int enableAppUser(String email) {
+        return appUserRepository.enableAppUser(email);
     }
     
 }
